@@ -18,7 +18,6 @@ PS1='[${GREEN}\u${BLUE}@${LBLUE}\h ${PURPLE}\W${RESET}]\$ '
 # aliases
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias dotfiles=/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME
 alias vi="/usr/bin/vim"
 alias vim="nvim"
 alias rfsh="source ~/.bashrc"

@@ -56,7 +56,7 @@ endif
 
 " Plugins
 call plug#begin()
-Plug 'preservim/NERDTree'
+" Plug 'preservim/NERDTree'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'ghifarit53/tokyonight-vim'
