@@ -72,6 +72,7 @@ set scrolloff=8
 set sw=2
 set sr
 set sts=2
+set clipboard=unnamedplus
 set termguicolors
 let g:tokyonight_style = 'night'
 let g:tokyonight_transparent_background = 1
