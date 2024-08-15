@@ -54,6 +54,14 @@ endif
 
 " --- CUSTOM ---
 
+" Plugins
+call plug#begin()
+Plug 'preservim/NERDTree'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'ghifarit53/tokyonight-vim'
+call plug#end()
+
 " Settings
 set ic
 set nu rnu
@@ -64,6 +72,10 @@ set scrolloff=8
 set sw=2
 set sr
 set sts=2
+set termguicolors
+let g:tokyonight_style = 'night'
+let g:tokyonight_transparent_background = 1
+colorscheme tokyonight
 
 " Keybinds
 nnoremap <F2> :set nu rnu!<CR>
