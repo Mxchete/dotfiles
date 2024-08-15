@@ -12,6 +12,9 @@ if [ "x$TMUX" = x ]
     fortune -a -s
 end
 
+# set vi-style keybinds
+fish_vi_key_bindings
+
 set PATH "$HOME/.emacs.d/bin:$PATH"
 #set DISPLAY :1.0
 #set WAYLAND_DISPLAY $DISPLAY
