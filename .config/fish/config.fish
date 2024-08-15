@@ -40,7 +40,7 @@ alias :q="exit"
 #alias emacs="~/.config/emacs/bin/doom run"
 #alias doom="~/.config/emacs/bin/doom"
 alias pacman="sudo pacman"
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME '
 
 function fish_prompt
     printf '[%s%s%s@%s%s %s%s%s]><> ' (set_color green ) $USER (set_color blue) (set_color cyan) $hostname (set_color magenta) (basename (prompt_pwd)) (set_color normal)
