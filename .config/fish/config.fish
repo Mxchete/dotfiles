@@ -1,6 +1,6 @@
 if status is-interactive
-    and not set -q TMUX
-    exec tmux
+    #and not set -q TMUX
+    #exec tmux
     # Commands to run in interactive sessions can go here
     if string match -q -- 'tmux*' $TERM
         set -g fish_vi_force_cursor 1
