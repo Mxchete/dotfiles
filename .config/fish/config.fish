@@ -1,5 +1,10 @@
 if status is-interactive
+    and not set -q TMUX
+    exec tmux
     # Commands to run in interactive sessions can go here
+    if string match -q -- 'tmux*' $TERM
+        set -g fish_vi_force_cursor 1
+    end
 end
 
 #sudo alsactl nrestore
@@ -14,6 +19,11 @@ end
 
 # set vi-style keybinds
 fish_vi_key_bindings
+set -g fish_vi_force_cursor 1
+
+set fish_cursor_default block
+set fish_cursor_insert line
+set fish_cursor_replace_one underscore
 
 set PATH "$HOME/.emacs.d/bin:$PATH"
 #set DISPLAY :1.0
@@ -44,8 +54,42 @@ alias :q="exit"
 #alias doom="~/.config/emacs/bin/doom"
 alias pacman="sudo pacman"
 
+function fish_mode_prompt
+end
 function fish_prompt
-    printf '[%s%s%s@%s%s %s%s%s]><> ' (set_color green ) $USER (set_color blue) (set_color cyan) $hostname (set_color magenta) (basename (prompt_pwd)) (set_color normal)
+    printf '[%s%s%s@%s%s %s%s%s]><> ' (set_color green ) $USER (set_color blue) (set_color cyan) $hostname (set_color magenta) (basename (prompt_pwd)) (set_color normal) (fish_mode_prompt)
+end
+
+function fish_right_prompt -d "Write out the right prompt"
+    printf '%s%s%s%s' (fish_default_mode_prompt) (set_color black) (date '+%m:%d:%y') (set_color normal)
+end
+
+function fish_default_mode_prompt
+    #tput cup $COLUMNS ($COLUMNS - 1)
+    switch $fish_bind_mode
+        case default
+            set_color --bold red
+            echo " -- NORMAL -- "
+        case insert
+            set_color --bold green
+            echo " -- INSERT -- "
+        case replace_one
+            set_color --bold green
+            echo " -- REPLACE -- "
+        case visual
+            set_color --bold brmagenta
+            echo " -- VISUAL -- "
+        case '*'
+            set_color --bold red
+            echo '?'
+    end
+    set_color normal
 end
 
 #fish_add_path /home/mxchete/.spicetify
+
+thefuck --alias | source
+
+function !!
+    eval $history[1]
+end
