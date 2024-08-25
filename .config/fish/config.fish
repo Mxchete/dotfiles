@@ -53,6 +53,7 @@ alias :q="exit"
 #alias emacs="~/.config/emacs/bin/doom run"
 #alias doom="~/.config/emacs/bin/doom"
 alias pacman="sudo pacman"
+alias fetch="neofetch"
 
 function fish_mode_prompt
 end
