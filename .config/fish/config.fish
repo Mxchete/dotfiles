@@ -58,7 +58,7 @@ alias fetch="neofetch"
 function fish_mode_prompt
 end
 function fish_prompt
-    printf '[%s%s%s@%s%s %s%s%s]><> ' (set_color green ) $USER (set_color blue) (set_color cyan) $hostname (set_color magenta) (basename (prompt_pwd)) (set_color normal) (fish_mode_prompt)
+    printf '[%s%s%s@%s%s %s%s%s]><> ' (set_color green ) $USER (set_color blue) (set_color cyan) $hostname (set_color magenta) (basename (prompt_pwd)) (set_color normal)
 end
 
 function fish_right_prompt -d "Write out the right prompt"
@@ -94,3 +94,16 @@ thefuck --alias | source
 function !!
     eval $history[1]
 end
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+if test -f /home/mxchete/anaconda3/bin/conda
+    eval /home/mxchete/anaconda3/bin/conda "shell.fish" "hook" $argv | source
+else
+    if test -f "/home/mxchete/anaconda3/etc/fish/conf.d/conda.fish"
+        . "/home/mxchete/anaconda3/etc/fish/conf.d/conda.fish"
+    else
+        set -x PATH "/home/mxchete/anaconda3/bin" $PATH
+    end
+end
+# <<< conda initialize <<<
