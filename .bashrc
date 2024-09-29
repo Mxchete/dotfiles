@@ -153,12 +153,12 @@ source "$OSH"/oh-my-bash.sh
 # PROMPT
 # RED="$(tput setaf 1)"
 GREEN="$(tput setaf 2)"
-# YELLOW="$(tput setaf 3)"
+YELLOW="$(tput setaf 3)"
 BLUE="$(tput setaf 4)"
 PURPLE="$(tput setaf 5)"
 LBLUE="$(tput setaf 6)"
 RESET="$(tput sgr0)"
-PS1='[${GREEN}\u${BLUE}@${LBLUE}\h ${PURPLE}\W${RESET}]\$ '
+PS1='${GREEN}\u${BLUE}@${LBLUE}\h ${YELLOW}\W ${PURPLE}->${RESET} \$ '
 
 # aliases
 alias ls='ls --color=auto'
@@ -172,20 +172,24 @@ alias l="ls -al"
 alias update="yay -Syu; flatpak update"
 alias :q="exit"
 alias pacman="sudo pacman"
-alias fetch="neofetch"
+alias fetch="fastfetch"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/mxchete/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/mxchete/anaconda3/bin/conda' 'shell.bash' 'hook' 2>/dev/null)"
 if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
+  eval "$__conda_setup"
 else
-    if [ -f "/home/mxchete/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/mxchete/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/mxchete/anaconda3/bin:$PATH"
-    fi
+  if [ -f "/home/mxchete/anaconda3/etc/profile.d/conda.sh" ]; then
+    . "/home/mxchete/anaconda3/etc/profile.d/conda.sh"
+  else
+    export PATH="/home/mxchete/anaconda3/bin:$PATH"
+  fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# source /usr/share/blesh/ble.sh
+# bleopt prompt_rps1_final='\t'
+
+eval "$(thefuck --alias)"
