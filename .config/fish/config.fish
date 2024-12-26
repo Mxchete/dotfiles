@@ -26,6 +26,8 @@ set fish_cursor_insert line
 set fish_cursor_replace_one underscore
 
 set PATH "$HOME/.emacs.d/bin:$PATH"
+set PATH "$HOME/bin:$PATH"
+#set PATH "$HOME/anaconda3/bin:$PATH"
 #set DISPLAY :1.0
 #set WAYLAND_DISPLAY $DISPLAY
 #set VK_ICD_FILENAMES /usr/share/vulkan/icd.d/radeon_icd.x86_64.json
@@ -54,6 +56,7 @@ alias :q="exit"
 #alias doom="~/.config/emacs/bin/doom"
 alias pacman="sudo pacman"
 alias fetch="fastfetch"
+#alias jupyter-notebook="~/anaconda3/bin/jupyter-notebook"
 
 function fish_mode_prompt
 end
@@ -62,7 +65,7 @@ function fish_prompt
 end
 
 function fish_right_prompt -d "Write out the right prompt"
-    printf '%s%s%s%s' (fish_default_mode_prompt) (set_color black) (date '+%m:%d:%y') (set_color normal)
+    printf '%s%s%s%s' (fish_default_mode_prompt) (set_color black) (date '+%H:%M:%S') (set_color normal)
 end
 
 function fish_default_mode_prompt
