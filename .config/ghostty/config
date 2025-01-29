@@ -1,11 +1,7 @@
-theme = tokyonight
+theme = tokyonight-storm
 background = 000000
 palette = 0=#51576d
 font-family = CaskaydiaCove NFM
 font-family-bold = CaskaydiaCove NFM
 font-family-italic = CaskaydiaCove NFM
 font-family-bold-italic = CaskaydiaCove NFM
-# font-family = Arial
-# font-family-bold = "JetBrainsMono NF Bold"
-# font-family-italic = "JetBrainsMono NF Italic"
-# font-family-bold-italic = "JetBrainsMono NF Bold Italic"
