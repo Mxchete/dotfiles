@@ -92,6 +92,9 @@ end
 
 #fish_add_path /home/mxchete/.spicetify
 
+bass source /opt/tools/Xilinx/Vivado/2024.2/settings64.sh
+bass source ~/.bash/analysis.bash
+
 thefuck --alias | source
 
 function !!
@@ -110,5 +113,3 @@ else
     end
 end
 # <<< conda initialize <<<
-
-bass source /opt/tools/Xilinx/Vivado/2024.2/settings64.sh
