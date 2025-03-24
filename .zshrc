@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.emacs.d/bin:$PATH
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -156,6 +157,7 @@ alias :q="exit"
 #alias doom="~/.config/emacs/bin/doom"
 alias pacman="sudo pacman"
 alias fetch="fastfetch"
+alias hl='rg --passthru'
 
 # Sources
 source /opt/tools/Xilinx/Vivado/2024.2/settings64.sh 
