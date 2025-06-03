@@ -167,4 +167,9 @@ source ~/.bash/analysis.bash
 source ~/.bash/cdstack.bash
 source ~/.bash/vardump.bash
 
+# Start in Tmux
+# if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+#   exec tmux
+# fi
+
 eval $(thefuck --alias)

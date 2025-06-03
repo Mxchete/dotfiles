@@ -1,7 +1,17 @@
+# Theming
 theme = tokyonight-storm
 background = 000000
 palette = 0=#51576d
+palette = 2=#73DACA
 font-family = CaskaydiaCove NFM
 font-family-bold = CaskaydiaCove NFM
 font-family-italic = CaskaydiaCove NFM
 font-family-bold-italic = CaskaydiaCove NFM
+window-theme = ghostty
+window-titlebar-background = 000000
+# adw-toolbar-style = raised-border
+
+# Integration with other apps
+shell-integration = zsh
+shell-integration-features = true
+term = xterm-256color
