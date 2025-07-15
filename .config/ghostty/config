@@ -1,6 +1,14 @@
+# Titlebar
+gtk-titlebar = true
+window-decoration = client
+
+async-backend = epoll
+
 # Theming
 theme = tokyonight-storm
 background = 000000
+# background-opacity = 0.9
+# background-blur = true
 palette = 0=#51576d
 palette = 2=#73DACA
 font-family = CaskaydiaCove NFM
@@ -10,6 +18,8 @@ font-family-bold-italic = CaskaydiaCove NFM
 window-theme = ghostty
 window-titlebar-background = 000000
 # adw-toolbar-style = raised-border
+custom-shader = shaders/cursor_smear.glsl
+# custom-shader = shaders/retro-terminal.glsl
 
 # Integration with other apps
 shell-integration = zsh

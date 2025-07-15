@@ -6,6 +6,8 @@ export PATH=$HOME/.emacs.d/bin:$PATH
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CUSTOM="$HOME/.config/zsh"
 
+export STEAM_EXTRA_COMPAT_TOOL_PATHS=/home/mxchete/.steam/root/compatibilitytools.d/
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -141,7 +143,7 @@ RPROMPT='%B$VI_MODE%b %F{black}%*%f'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias vi="/usr/bin/vim"
+# alias vi="/usr/bin/vim"
 alias vim="nvim"
 # alias code="codium"
 # alias gvim="~/.local/share/applications/neovide.AppImage"
@@ -150,7 +152,8 @@ alias rfsh="source ~/.zshrc"
 alias clean="clear; fortune -a -s"
 alias ls="ls --color=auto"
 alias l="ls -al"
-alias update="yay -Syu; flatpak update"
+alias update="pushd /etc/nixos; nix flake update; popd; sudo nixos-rebuild switch --upgrade; flatpak update"
+alias switch="sudo nixos-rebuild switch"
 #alias btud="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias :q="exit"
 #alias emacs="~/.config/emacs/bin/doom run"
@@ -158,9 +161,11 @@ alias :q="exit"
 alias pacman="sudo pacman"
 alias fetch="fastfetch"
 alias hl='rg --passthru'
+alias glg="git log --graph --abbrev-commit --decorate --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white) - %an%C(reset)%C(auto)%d%C(reset)'"
+alias rm='rm -I'
 
 # Sources
-source /opt/tools/Xilinx/Vivado/2024.2/settings64.sh 
+# source /opt/tools/Xilinx/Vivado/2024.2/settings64.sh 
 
 # bash libraries
 source ~/.bash/analysis.bash
@@ -172,4 +177,4 @@ source ~/.bash/vardump.bash
 #   exec tmux
 # fi
 
-eval $(thefuck --alias)
+# eval $(thefuck --alias)
