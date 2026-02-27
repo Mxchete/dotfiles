@@ -152,8 +152,6 @@ alias rfsh="source ~/.zshrc"
 alias clean="clear; fortune -a -s"
 alias ls="ls --color=auto"
 alias l="ls -al"
-alias update="pushd /etc/nixos; nix flake update; popd; sudo nixos-rebuild switch --upgrade; flatpak update"
-alias switch="sudo nixos-rebuild switch"
 #alias btud="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias :q="exit"
 #alias emacs="~/.config/emacs/bin/doom run"
@@ -171,6 +169,7 @@ alias rm='rm -I'
 source ~/.bash/analysis.bash
 source ~/.bash/cdstack.bash
 source ~/.bash/vardump.bash
+source ~/.bash/machine_specific.bash
 
 # Start in Tmux
 # if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then

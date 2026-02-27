@@ -1,1 +1,2 @@
 .config/nvim/*
+.bash/machine_specific.bash

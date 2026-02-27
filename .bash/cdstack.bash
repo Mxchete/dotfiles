@@ -12,7 +12,7 @@
 # License: MIT
 
 # config
-CD_STACK_MAX=${CD_STACK_MAX:-15}
+CD_STACK_MAX=${CD_STACK_MAX:-20}
 #CD_STACK_REVERSE=   set by environment
 
 # internal
@@ -26,7 +26,7 @@ cd() {
 
   _CD_STACK=("$PWD" "${_CD_STACK[@]}")
   if ((${#_CD_STACK[@]} > CD_STACK_MAX)); then
-    unset _CD_STACK[${#_CD_STACK[@]}-1]
+    unset "${_CD_STACK[${#_CD_STACK[@]} - 1]}"
   fi
   _CD_STACK_PTR=0
 
